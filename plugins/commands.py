@@ -106,7 +106,10 @@ async def start(bot, cmd):
                        InlineKeyboardButton("🎬Movie Group🎬", url='https://t.me/ADMOVEIAD'),
                     ],
                      [
-                        InlineKeyboardButton("About", callback_data="about")
+                       InlineKeyboardButton("🎬Movie Channeil🎬", url='https://t.me/ADMOVEI'),
+                       InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url='http://t.me/AD_Movie_Imdb_bot?startgroup=botstart'),
+                    ],
+                     [ InlineKeyboardButton("About", callback_data="about")
                     ]
                 ]
             )
