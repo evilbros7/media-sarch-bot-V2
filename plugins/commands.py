@@ -1,27 +1,13 @@
-Skip to content
-Maxfurytherider
-/
-Media-Search-bot-v2
-Public
-forked from Jinn-of-telegram/Media-Search-bot-v2
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Media-Search-bot-v2/plugins/commands.py
-@Maxfurytherider
-Maxfurytherider Update commands.py
- 4 contributors
-301 lines (277 sloc)  11.5 KB
 import os
 import logging
+from Config import ADMIN_ID
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from info import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
 from utils import Media, get_file_details
+from Database import Database
+from plugins.Broadcast import Broadcast
+
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
 
@@ -84,8 +70,8 @@ async def start(bot, cmd):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('♻️𝙂𝙍𝙊𝙐𝙋♻️', url='https://t.me/ADMOVEIAD'),
-                        InlineKeyboardButton('⭕️𝘾𝙃𝘼𝙉𝙉𝙀𝙇⭕️', url='https://t.me/ADMOVEI')
+                        InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
+                        InlineKeyboardButton('More Bots', url='https://t.me/ErrorXbotz')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -110,27 +96,35 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_photo(
-            photo="https://telegra.ph/file/8f6f68930e0a921447f78.jpg",
-            caption=START_MSG,
+        await cmd.reply_text(
+            START_MSG,
+            parse_mode="Markdown",
+            disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-            [
+                [
                     [
-                        InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url='http://t.me/AD_Movie_Imdb_bot?startgroup=botstart'),
-                    ],
-                   [
-                       InlineKeyboardButton("⭕️𝘾𝙃𝘼𝙉𝙉𝙀𝙇⭕️", url='https://t.me/ADMOVEI'),
-                       InlineKeyboardButton("♻️𝙂𝙍𝙊𝙐𝙋♻️", url='https://t.me/ADMOVEIAD'),
-                    ],
-                     [
-                       InlineKeyboardButton("♂️Search Here♂️", switch_inline_query_current_chat=''),
-                       InlineKeyboardButton("🔥Dev🔥", url='https://t.me/Lucifer_Devil_AD'),
-                    ],
-                     [ InlineKeyboardButton("😈?ഞാൻ ആരാണെന്ന് അറിയണോ?😈", url='https://t.me/c/1516570371/28')
+                        InlineKeyboardButton("🤖 Join Updates Channel", url=invite_link.invite_link)
                     ]
                 ]
             )
         )
+    else:
+        await cmd.reply_video(
+            video="https://telegra.ph/file/0a03ae0bcc59e86c3f367.mp4",
+            caption=START_MSG,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("😎ⓄⓌⓃⒺⓇ😎", url="https://t.me/Myfreak123"),
+                        InlineKeyboardButton("♻️ⒼⓇⓄⓊⓅ♻️", url="https://t.me/Movies_Club_2019")
+                    ],
+                    [
+                        InlineKeyboardButton("⭕️𝙲𝙷𝙰𝙽𝙽𝙴𝙻⭕️", url="https://t.me/mcnewmovies"),
+                        InlineKeyboardButton("💞SOURCE CODE💞", url="https://t.me/mcallmovies/36"),
+                      ]
+                    ]
+                 )
+              )
 
 
 @Client.on_message(filters.command('channel') & filters.user(ADMINS))
@@ -215,21 +209,11 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('♻️𝘾𝙃𝘼𝙉𝙉𝙀𝙇♻️', url='https://t.me/ADMOVEIAD'),
-            InlineKeyboardButton('⭕️𝙂𝙍𝙊𝙐𝙋⭕️', url='https://t.me/ADMOVEI')
+            InlineKeyboardButton('Update Channel', url='https://t.me/ErrorXbotz'),
+            InlineKeyboardButton('Source Code', url='https://github.com/Jinn-Of-Telegram/Media-Search-bot-v2')
         ]
         ]
-    await message.reply(text="<b>Developer😎 : <a href='https://t.me/Lucifer_Devil_AD'<a꧁🌀▼𝗟𝘂ᴥ𝗰𝗶𝗳𝗲𝗿ʔ💠❍𝗠𝗼🔺ᗕ𝗿𝗻ಠ𝗶𝗴🕊️𝘀𝘁ಠ𝗮𝗿🌀▼꧂</a>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-
-@Client.on_message(filters.command('help'))
-async def bot_info(bot, message):
-    buttons = [
-        [
-            InlineKeyboardButton('♻️𝘾𝙃𝘼𝙉𝙉𝙀𝙇♻️', url='https://t.me/ADMOVEIAD'),
-            InlineKeyboardButton('⭕️𝙂𝙍𝙊𝙐𝙋⭕️', url='https://t.me/ADMOVEI')
-        ]
-        ]
-    await message.reply(text="<b>If You Have Any Doubts And If Any Errors In Codes Or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text="<b>Developer : <a href='https://t.me/Jinn_007'>꧁Ⓜⓤⓣⓗⓐⓛⓘⓑ_★࿐</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/Jinn-Of-Telegram/Media-Search-bot-V2'>Click here</a>\nUpdate Channel : <a href='https://t.me/ErrorXBotz'>ErrorXBotz</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 @Client.on_message(filters.command('info') & (filters.private | filters.group))
 async def showinfo(client, message):
@@ -290,7 +274,7 @@ async def showinfo(client, message):
         f"<b>UserID</b> : <code>{id}</code>\n"
         f"<b>Username Name</b> : {user_name}\n"
         f"<b>Permanant USER Link</b> : <a href='tg://user?id={id}'>Link ❗️</a>\n\n"
-        f"<b>@ONLY_CODES</b>",
+        f"<b>@ErrorXBotz</b>",
         quote=True,
         parse_mode="html"
     )
@@ -318,16 +302,24 @@ async def showid(client, message):
             parse_mode="md",
             quote=True
         )  
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
+
+@Client.on_message(filters.private & filters.command("broadcast"))
+async def broadcast_handler_open(_, m):
+    if m.from_user.id not in ADMIN_ID:
+        await m.delete()
+        return
+    if m.reply_to_message is None:
+        await m.delete()
+    else:
+        await broadcast(m, db)
+
+@Client.on_message(filters.command('help'))
+async def bot_info(bot, message):
+    buttons = [
+        [
+            InlineKeyboardButton('Update Channel', url='https://t.me/ErrorXbotz'),
+            InlineKeyboardButton('Source Code', url='https://github.com/Jinn-of-telegram/Media-Search-bot-v2')
+        ]
+        ]
+    await message.reply(text="<b><u>Commands In This Bot</u> \n\n <u>Basic Commands</u> \n\n /start Check I am Alive \n /help To Get Help \n\n <u>Admin Commands</u> \n\n /channel - Get basic infomation about channels \n /total - Show total of saved files \n /delete - Delete file from database \n /index - Index all files from channel \n /logger - Get log file</b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
