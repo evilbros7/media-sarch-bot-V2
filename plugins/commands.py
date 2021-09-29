@@ -92,24 +92,23 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_Video(
-            Video="https://telegra.ph/file/0a03ae0bcc59e86c3f367.mp4",
+        await cmd.reply_Photo(
+            Photo="https://telegra.ph/file/b6b43c0bd9871bcd61a3a.jpg",
             caption=START_MSG,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Search Here♂️", switch_inline_query_current_chat=''),
-                        InlineKeyboardButton("🔥Dev🔥", url='https://t.me/Lucifer_Devil_AD'),
+                        InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url='http://t.me/AD_Movie_Imdb_bot?startgroup=botstart'),
                     ],
                    [
-                       InlineKeyboardButton("🤖Update Channel🤖", url='https://t.me/ONLY_CODES'),
-                       InlineKeyboardButton("🎬Movie Group🎬", url='https://t.me/ADMOVEIAD'),
+                       InlineKeyboardButton("⭕️𝘾𝙃𝘼𝙉𝙉𝙀𝙇⭕️", url='https://t.me/ADMOVEI'),
+                       InlineKeyboardButton("♻️𝙂𝙍𝙊𝙐𝙋♻️", url='https://t.me/ADMOVEIAD'),
                     ],
                      [
-                       InlineKeyboardButton("🎬Movie Channeil🎬", url='https://t.me/ADMOVEI'),
-                       InlineKeyboardButton("About", callback_data="about"),
+                       InlineKeyboardButton("♂️Search Here♂️", switch_inline_query_current_chat=''),
+                       InlineKeyboardButton("🔥Dev🔥", url='https://t.me/Lucifer_Devil_AD'),
                     ],
-                     [ InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url='http://t.me/AD_Movie_Imdb_bot?startgroup=botstart')
+                     [ InlineKeyboardButton("😈?ഞാൻ ആരാണെന്ന് അറിയണോ?😈", url='https://t.me/c/1516570371/28')
                     ]
                 ]
             )
