@@ -1,3 +1,21 @@
+Skip to content
+Maxfurytherider
+/
+Media-Search-bot-v2
+Public
+forked from Jinn-of-telegram/Media-Search-bot-v2
+Code
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Media-Search-bot-v2/plugins/commands.py
+@Maxfurytherider
+Maxfurytherider Update commands.py
+ 4 contributors
+301 lines (277 sloc)  11.5 KB
 import os
 import logging
 from pyrogram import Client, filters
@@ -66,8 +84,8 @@ async def start(bot, cmd):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
-                        InlineKeyboardButton('More Bots', url='https://t.me/ErrorXbotz')
+                        InlineKeyboardButton('♻️𝙂𝙍𝙊𝙐𝙋♻️', url='https://t.me/ADMOVEIAD'),
+                        InlineKeyboardButton('⭕️𝘾𝙃𝘼𝙉𝙉𝙀𝙇⭕️', url='https://t.me/ADMOVEI')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -92,11 +110,11 @@ async def start(bot, cmd):
             )
         )
     else:
-        await cmd.reply_Photo(
-            Photo="https://telegra.ph/file/b6b43c0bd9871bcd61a3a.jpg",
+        await cmd.reply_photo(
+            photo="https://telegra.ph/file/8f6f68930e0a921447f78.jpg",
             caption=START_MSG,
             reply_markup=InlineKeyboardMarkup(
-                [
+            [
                     [
                         InlineKeyboardButton("➕️Add Me To Your Chats ➕️", url='http://t.me/AD_Movie_Imdb_bot?startgroup=botstart'),
                     ],
@@ -197,18 +215,18 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('⚒️Update Channel⚒️', url='https://t.me/ONLY_CODES'),
-            InlineKeyboardButton('🎬Movie Groop🎬', url='https://t.me/ADMOVEIAD')
+            InlineKeyboardButton('♻️𝘾𝙃𝘼𝙉𝙉𝙀𝙇♻️', url='https://t.me/ADMOVEIAD'),
+            InlineKeyboardButton('⭕️𝙂𝙍𝙊𝙐𝙋⭕️', url='https://t.me/ADMOVEI')
         ]
         ]
-    await message.reply(text="<b>Developer : <a href='https://t.me/Lucifer_Devil_AD'>꧁🌀▼𝗟𝘂ᴥ𝗰𝗶𝗳𝗲𝗿ʔ💠❍𝗠𝗼🔺ᗕ𝗿𝗻ಠ𝗶𝗴🕊️𝘀𝘁ಠ𝗮𝗿🌀▼꧂</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/Jinn-Of-Telegram/Media-Search-bot-V2'>Click here</a>\nUpdate Channel : <a href='https://t.me/ErrorXBotz'>ErrorXBotz</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text="<b>Developer😎 : <a href='https://t.me/Lucifer_Devil_AD'<a꧁🌀▼𝗟𝘂ᴥ𝗰𝗶𝗳𝗲𝗿ʔ💠❍𝗠𝗼🔺ᗕ𝗿𝗻ಠ𝗶𝗴🕊️𝘀𝘁ಠ𝗮𝗿🌀▼꧂</a>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 @Client.on_message(filters.command('help'))
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('⚒️Update Channel⚒️', url='https://t.me/ONLY_CODES'),
-            InlineKeyboardButton('🎬MOVIE GROOP🎬', url='https://t.me/ADMOVEIAD')
+            InlineKeyboardButton('♻️𝘾𝙃𝘼𝙉𝙉𝙀𝙇♻️', url='https://t.me/ADMOVEIAD'),
+            InlineKeyboardButton('⭕️𝙂𝙍𝙊𝙐𝙋⭕️', url='https://t.me/ADMOVEI')
         ]
         ]
     await message.reply(text="<b>If You Have Any Doubts And If Any Errors In Codes Or Bugs Inform Us On Our Support Group ❗️\n Use Below Buttons To Get Support Group / Update channel Links </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -272,7 +290,7 @@ async def showinfo(client, message):
         f"<b>UserID</b> : <code>{id}</code>\n"
         f"<b>Username Name</b> : {user_name}\n"
         f"<b>Permanant USER Link</b> : <a href='tg://user?id={id}'>Link ❗️</a>\n\n"
-        f"<b>@ErrorXBotz</b>",
+        f"<b>@ONLY_CODES</b>",
         quote=True,
         parse_mode="html"
     )
@@ -300,4 +318,16 @@ async def showid(client, message):
             parse_mode="md",
             quote=True
         )  
-
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Loading complete
